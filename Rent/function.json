@@ -21,7 +21,7 @@
       "name": "history",
       "databaseName": "EventStore",
       "collectionName": "event-bags",
-      "sqlQuery": "SELECT eb.event FROM eb WHERE eb.aggregateId = {carId}",
+      "sqlQuery": "SELECT eb.event FROM eb WHERE eb.event.carId = {carId}",
       "connection": "car-rental_DOCUMENTDB",
       "direction": "in"
     }

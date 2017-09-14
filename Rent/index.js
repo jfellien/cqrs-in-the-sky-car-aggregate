@@ -10,8 +10,8 @@ module.exports = (context, command, history) => {
     },
     {
       eventName: "journey prepared",
-      journeyId: uuid(),
       carId: command.carId,
+      journeyId: uuid(),
       driverId: command.driverId
     }
   ]
