@@ -1,0 +1,30 @@
+{
+  "bindings": [
+    {
+      "name": "command",
+      "type": "serviceBusTrigger",
+      "direction": "in",
+      "queueName": "rentCar",
+      "connection": "car-rental_Send_and_Listen_SERVICEBUS",
+      "accessRights": "Listen"
+    },
+    {
+      "type": "serviceBus",
+      "connection": "car-rental_Send_and_Listen_SERVICEBUS",
+      "name": "$return",
+      "topicName": "notifications",
+      "accessRights": "Send",
+      "direction": "out"
+    },
+    {
+      "type": "documentDB",
+      "name": "history",
+      "databaseName": "EventStore",
+      "collectionName": "event-bags",
+      "sqlQuery": "SELECT eb.event FROM eb WHERE eb.aggregateId = {carId}",
+      "connection": "car-rental_DOCUMENTDB",
+      "direction": "in"
+    }
+  ],
+  "disabled": false
+}
