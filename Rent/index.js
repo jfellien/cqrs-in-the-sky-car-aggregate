@@ -3,7 +3,7 @@ const uuid = require('uuid/v4');
 module.exports = (context, command, history) => {
   // use the history (Event Stream) for business decisions
   
-  return [
+  context.bindings.events = [
     {
       eventName: "car rented",
       carId: command.carId
@@ -15,4 +15,6 @@ module.exports = (context, command, history) => {
       driverId: command.driverId
     }
   ]
+
+  context.done();
 }

@@ -11,7 +11,7 @@
     {
       "type": "serviceBus",
       "connection": "car-rental_Send_and_Listen_SERVICEBUS",
-      "name": "$return",
+      "name": "events",
       "topicName": "notifications",
       "accessRights": "Send",
       "direction": "out"
