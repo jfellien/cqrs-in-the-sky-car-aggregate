@@ -1,0 +1,13 @@
+{
+  "bindings": [
+    {
+      "name": "command",
+      "type": "serviceBusTrigger",
+      "direction": "in",
+      "queueName": "lockCar",
+      "connection": "car-rental_Send_and_Listen_SERVICEBUS",
+      "accessRights": "Listen"
+    }
+  ],
+  "disabled": false
+}
