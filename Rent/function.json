@@ -20,7 +20,7 @@
       "type": "serviceBus",
       "connection": "car-rental_Send_and_Listen_SERVICEBUS",
       "name": "carRented",
-      "topicName": "carRented",
+      "topicName": "car-rented",
       "accessRights": "Send",
       "direction": "out"
     },
