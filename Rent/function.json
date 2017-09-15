@@ -1,8 +1,8 @@
 {
   "bindings": [
     {
-      "name": "command",
       "type": "serviceBusTrigger",
+      "name": "command",
       "direction": "in",
       "queueName": "rentCar",
       "connection": "car-rental_Send_and_Listen_SERVICEBUS",
@@ -11,8 +11,16 @@
     {
       "type": "serviceBus",
       "connection": "car-rental_Send_and_Listen_SERVICEBUS",
-      "name": "events",
+      "name": "notifications",
       "topicName": "notifications",
+      "accessRights": "Send",
+      "direction": "out"
+    },
+    {
+      "type": "serviceBus",
+      "connection": "car-rental_Send_and_Listen_SERVICEBUS",
+      "name": "carRented",
+      "topicName": "carRented",
       "accessRights": "Send",
       "direction": "out"
     },
